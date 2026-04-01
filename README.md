@@ -52,7 +52,7 @@ Each concept is implemented using:
 
 | Post | Topic                             | Type       | Code Path                                   | Link        |
 | --- | --------------------------------- | ---------- | ------------------------------------------- | ----------- |
-| 1   | Using AddSingleton with DbContext | Mistake    | `src/DotNetConceptLab/Data/AppDbContext.cs` | Coming Soon |
+| 1 | [Using AddSingleton with DbContext](posts/post-1-di-dbcontext-lifetime/README.md) | Mistake    | `src/DotNetConceptLab/Data/AppDbContext.cs` | [LinkedIn](#) |
 
 > This table will be updated as new posts are added.
 
