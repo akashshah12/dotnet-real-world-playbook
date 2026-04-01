@@ -4,6 +4,8 @@ A collection of real-world .NET concepts explained with practical examples, clea
 
 This repository is built alongside a LinkedIn series where each post focuses on solving real development problems using simple and effective approaches.
 
+🔗 Follow me on LinkedIn for regular updates: [LinkedIn | Akash Shah](https://www.linkedin.com/in/akashshah12/)
+
 ---
 
 ## 🎯 What You’ll Find Here
@@ -52,7 +54,7 @@ Each concept is implemented using:
 
 | Post | Topic                             | Type       | Code Path                                   | Link        |
 | --- | --------------------------------- | ---------- | ------------------------------------------- | ----------- |
-| 1 | [Using AddSingleton with DbContext](posts/post-1-di-dbcontext-lifetime/README.md) | Mistake    | `src/DotNetConceptLab/Data/AppDbContext.cs` | [LinkedIn](#) |
+| 1 | [Using AddSingleton with DbContext](posts/post-1-di-dbcontext-lifetime/README.md) | Mistake    | `src/DotNetConceptLab/Data/AppDbContext.cs` | [LinkedIn](https://www.linkedin.com/posts/akashshah12_dotnet-aspnetcore-dependencyinjection-activity-7445168434578870273-Ceu_?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAyuQhMBu9hN6cIx0wrI0m-m65rzhE-5JoU) |
 
 > This table will be updated as new posts are added.
 
