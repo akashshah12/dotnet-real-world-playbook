@@ -55,7 +55,7 @@ Each concept is implemented using:
 | Post | Topic                             | Type       | Code Path                                   | Link        |
 | --- | --------------------------------- | ---------- | ------------------------------------------- | ----------- |
 | 1 | [Using AddSingleton with DbContext](posts/post-1-di-dbcontext-lifetime/README.md) | Mistake    | `src/DotNetConceptLab/Data/AppDbContext.cs` | [LinkedIn](https://www.linkedin.com/posts/akashshah12_dotnet-aspnetcore-dependencyinjection-activity-7445168434578870273-Ceu_?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAyuQhMBu9hN6cIx0wrI0m-m65rzhE-5JoU) |
-| 2 | [What async/await Really Does (Misunderstood)](posts/post-02-async-await/README.md) | Concept + Mistakes | `src/DotNetConceptLab/AsyncAwait/` | [LinkedIn](https://www.linkedin.com/in/akashshah12/) |
+| 2 | [What async/await Really Does (Misunderstood)](posts/post-02-async-await/README.md) | Concept + Mistakes | `src/DotNetConceptLab/AsyncAwait/` | [LinkedIn](https://www.linkedin.com/posts/akashshah12_dotnet-csharp-asyncawait-activity-7450022630835015680-6UfL?utm_medium=ios_app&rcm=ACoAAAyuQhMBu9hN6cIx0wrI0m-m65rzhE-5JoU) |
 
 > This table will be updated as new posts are added.
 
