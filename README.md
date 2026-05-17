@@ -93,7 +93,7 @@ Each concept is implemented using:
 
 | Post | Topic                             | Type       | Code Path                                   | Link        |
 | --- | --------------------------------- | ---------- | ------------------------------------------- | ----------- |
-| 1 | [Using AddSingleton with DbContext](posts/post-1-di-dbcontext-lifetime/README.md) | Mistake    | `src/DotNetConceptLab/Posts/Post01_SingletonDbContext/Data/AppDbContext.cs` | [LinkedIn](https://www.linkedin.com/posts/akashshah12_dotnet-aspnetcore-dependencyinjection-activity-7445168434578870273-Ceu_?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAyuQhMBu9hN6cIx0wrI0m-m65rzhE-5JoU) |
+| 1 | [Using AddSingleton with DbContext](posts/post-01-di-dbcontext-lifetime/README.md) | Mistake    | `src/DotNetConceptLab/Posts/Post01_SingletonDbContext/Data/AppDbContext.cs` | [LinkedIn](https://www.linkedin.com/posts/akashshah12_dotnet-aspnetcore-dependencyinjection-activity-7445168434578870273-Ceu_?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAyuQhMBu9hN6cIx0wrI0m-m65rzhE-5JoU) |
 | 2 | [What async/await Really Does (Misunderstood)](posts/post-02-async-await/README.md) | Concept + Mistakes | `src/DotNetConceptLab/Posts/Post02_AsyncAwait/` | [LinkedIn](https://www.linkedin.com/posts/akashshah12_dotnet-csharp-asyncawait-activity-7450022630835015680-6UfL?utm_medium=ios_app&rcm=ACoAAAyuQhMBu9hN6cIx0wrI0m-m65rzhE-5JoU) |
 | 3 | [IHttpClientFactory — Why `new HttpClient()` is a production bug](posts/post-03-ihttpclientfactory/README.md) | Mistake | `src/DotNetConceptLab/Posts/post-03-ihttpclientfactory/` | [LinkedIn](https://www.linkedin.com/in/akashshah12/) |
 
