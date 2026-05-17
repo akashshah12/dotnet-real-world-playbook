@@ -1,7 +1,7 @@
 # IHttpClientFactory — Why `new HttpClient()` is a Production Bug 🚨
 
 > **Engineering Real World Playbook — Post #3**
-> Phase 2 — ASP.NET Core Internals | Type: Mistake | Priority: 3
+> ASP.NET Core Internals | Type: Mistake
 
 ---
 
@@ -229,10 +229,10 @@ It manages a pool of **`HttpMessageHandler`** instances — not `HttpClient` ins
 ## 📁 Folder Structure
 
 ```
-src/DotNetConceptLab/Posts/Post03_HttpClientFactory/
+src/DotNetConceptLab/Posts/Post25_HttpClientFactory/
 │
 ├── Controllers/
-│   └── Post03OrderController.cs      ← Route: api/p03/orders
+│   └── Post25OrderController.cs      ← Route: api/p25/orders
 │                                        Injects: IOrderService
 │                                        No HttpClient knowledge here
 │
@@ -259,16 +259,16 @@ src/DotNetConceptLab/Posts/Post03_HttpClientFactory/
 ### Namespace
 
 ```
-DotNetConceptLab.Posts.Post03_HttpClientFactory
+DotNetConceptLab.Posts.Post25
 ```
 
 ### DI Registration — Program.cs
 
 ```csharp
-using Post03Services = DotNetConceptLab.Posts.Post03_HttpClientFactory.Services;
+using Post25Services = DotNetConceptLab.Posts.Post25.Services;
 
-// ── POST 03 — IHttpClientFactory ────────────────────────────────────────────
-builder.Services.AddHttpClient<Post03Services.OrderApiClient>(client =>
+// ── POST 25 — IHttpClientFactory ────────────────────────────────────────────
+builder.Services.AddHttpClient<Post25Services.OrderApiClient>(client =>
 {
     client.BaseAddress = new Uri(
         builder.Configuration["ExternalApis:OrderApi"]
@@ -282,8 +282,8 @@ builder.Services.AddHttpClient<Post03Services.OrderApiClient>(client =>
 )
 .SetHandlerLifetime(TimeSpan.FromMinutes(5));
 
-builder.Services.AddScoped<Post03Services.IOrderService,
-                            Post03Services.OrderService>();
+builder.Services.AddScoped<Post25Services.IOrderService,
+                            Post25Services.OrderService>();
 ```
 
 ### Configuration — appsettings.json
@@ -310,11 +310,11 @@ No setup required. All endpoints work out of the box.
 ### Get order by ID
 
 ```http
-GET /api/p03/orders/1
+GET /api/p25/orders/1
 ```
 
 ```bash
-curl -X GET "https://localhost:7001/api/p03/orders/1" \
+curl -X GET "https://localhost:7001/api/p25/orders/1" \
   -H "Accept: application/json"
 ```
 
@@ -340,11 +340,11 @@ curl -X GET "https://localhost:7001/api/p03/orders/1" \
 ### Get all orders for a user
 
 ```http
-GET /api/p03/orders/user/1
+GET /api/p25/orders/user/1
 ```
 
 ```bash
-curl -X GET "https://localhost:7001/api/p03/orders/user/1" \
+curl -X GET "https://localhost:7001/api/p25/orders/user/1" \
   -H "Accept: application/json"
 ```
 
@@ -362,12 +362,12 @@ curl -X GET "https://localhost:7001/api/p03/orders/user/1" \
 ### Create an order
 
 ```http
-POST /api/p03/orders
+POST /api/p25/orders
 Content-Type: application/json
 ```
 
 ```bash
-curl -X POST "https://localhost:7001/api/p03/orders" \
+curl -X POST "https://localhost:7001/api/p25/orders" \
   -H "Content-Type: application/json" \
   -H "Accept: application/json" \
   -d '{
@@ -399,18 +399,18 @@ curl -X POST "https://localhost:7001/api/p03/orders" \
 Start the app and watch the console. If `jsonplaceholder.typicode.com` is slow or unreachable:
 
 ```
-[Post03] Retry 1 after 2s — No connection could be made
-[Post03] Retry 2 after 4s — No connection could be made
-[Post03] Retry 3 after 8s — No connection could be made
-[Post03] Circuit OPEN for 30s
+[Post25] Retry 1 after 2s — No connection could be made
+[Post25] Retry 2 after 4s — No connection could be made
+[Post25] Retry 3 after 8s — No connection could be made
+[Post25] Circuit OPEN for 30s
 ```
 
 After 5 failures within a window:
 ```
-[Post03] Circuit OPEN for 30s
+[Post25] Circuit OPEN for 30s
 # All requests immediately return 503 — upstream not hammered
-[Post03] Circuit HALF-OPEN — testing upstream
-[Post03] Circuit CLOSED — upstream healthy
+[Post25] Circuit HALF-OPEN — testing upstream
+[Post25] Circuit CLOSED — upstream healthy
 ```
 
 ---
