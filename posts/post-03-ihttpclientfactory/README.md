@@ -259,13 +259,13 @@ src/DotNetConceptLab/Posts/Post03_HttpClientFactory/
 ### Namespace
 
 ```
-DotNetConceptLab.Posts.Post03
+DotNetConceptLab.Posts.Post03_HttpClientFactory
 ```
 
 ### DI Registration — Program.cs
 
 ```csharp
-using Post03Services = DotNetConceptLab.Posts.Post03.Services;
+using Post03Services = DotNetConceptLab.Posts.Post03_HttpClientFactory.Services;
 
 // ── POST 03 — IHttpClientFactory ────────────────────────────────────────────
 builder.Services.AddHttpClient<Post03Services.OrderApiClient>(client =>
@@ -310,7 +310,7 @@ No setup required. All endpoints work out of the box.
 ### Get order by ID
 
 ```http
-GET /api/p035/orders/1
+GET /api/p03/orders/1
 ```
 
 ```bash
@@ -322,8 +322,8 @@ curl -X GET "http://localhost:5088/api/p03/orders/1" \
 ```json
 {
   "id": 1,
-  "product": "sunt aut facere repellat provident...",
-  "description": "quia et suscipit\nsuscipit recusandae...",
+  "product": "Product 1.",
+  "description": "Test Description",
   "userId": 1,
   "amount": 49.99,
   "status": "Active"
