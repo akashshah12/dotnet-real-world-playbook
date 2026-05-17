@@ -299,7 +299,7 @@ GET /api/p02/orders/1
 ```
 
 ```bash
-curl "https://localhost:5088/api/p02/orders/1"
+curl "http://localhost:5088/api/p02/orders/1"
 ```
 
 Response:
@@ -319,7 +319,7 @@ GET /api/p02/orders/user/1
 ```
 
 ```bash
-curl "https://localhost:5088/api/p02/orders/user/1"
+curl "http://localhost:5088/api/p02/orders/user/1"
 ```
 
 ### Create an order
@@ -330,7 +330,7 @@ Content-Type: application/json
 ```
 
 ```bash
-curl -X POST "https://localhost:5088/api/p02/orders" \
+curl -X POST "http://localhost:5088/api/p02/orders" \
   -H "Content-Type: application/json" \
   -d '{"product": "Keyboard", "userId": 1}'
 ```
@@ -347,7 +347,7 @@ GET /api/p02/orders/dashboard/1
 ```
 
 ```bash
-curl "https://localhost:5088/api/p02/orders/dashboard/1"
+curl "http://localhost:5088/api/p02/orders/dashboard/1"
 ```
 
 Response:

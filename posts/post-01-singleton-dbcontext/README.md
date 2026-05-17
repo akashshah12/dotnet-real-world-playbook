@@ -197,7 +197,7 @@ GET /api/p01/orders
 ```
 
 ```bash
-curl "https://localhost:7001/api/p01/orders"
+curl "http://localhost:5088/api/p01/orders"
 ```
 
 Response:

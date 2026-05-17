@@ -17,21 +17,60 @@ This repository is built alongside a LinkedIn series where each post focuses on 
 
 ---
 
-## 🧩 Repository Structure
+## 🗂️ Repository Structure
 
-```bash
-.
-├── src/
-│   └── DotNetConceptLab/        # Main .NET project (all working code)
+```
+dotnet-real-world-playbook/
 │
-├── posts/
-│   ├── post-1-di-dbcontext-lifetime/
-│   │   └── README.md            # Explanation + code reference
-│   ├── ...
+├── posts/                                        ← README + LinkedIn post per topic
+│   ├── post-01-singleton-dbcontext/
 │   │   └── README.md
-│   └── ...
+│   ├── post-02-async-await/
+│   │   └── README.md
+│   └── post-03-ihttpclientfactory/
+│       └── README.md
 │
-└── README.md                   # Root documentation
+├── src/
+│   └── DotNetConceptLab/                         ← Single ASP.NET Core Web API project
+│       │
+│       ├── Posts/                                ← All post code lives here
+│       │   │
+│       │   ├── Post01_SingletonDbContext/         ← Post #1
+│       │   │   ├── Controllers/
+│       │   │   │   └── Post01OrderController.cs   route: api/p01/orders
+│       │   │   ├── Data/
+│       │   │   │   └── AppDbContext.cs
+│       │   │   └── Services/
+│       │   │       ├── IOrderLogService.cs
+│       │   │       └── OrderLogService.cs
+│       │   │
+│       │   ├── Post02_AsyncAwait/                 ← Post #2
+│       │   │   ├── Controllers/
+│       │   │   │   └── Post02OrderController.cs   route: api/p02/orders
+│       │   │   ├── Models/
+│       │   │   │   └── Models.cs
+│       │   │   ├── Repositories/
+│       │   │   │   └── Repositories.cs
+│       │   │   └── Services/
+│       │   │       ├── IOrderService.cs
+│       │   │       └── OrderService.cs
+│       │   │
+│       │   └── Post03_HttpClientFactory/          ← Post #3
+│       │       ├── Controllers/
+│       │       │   └── Post03OrderController.cs   route: api/p03/orders
+│       │       ├── Models/
+│       │       │   └── Models.cs
+│       │       ├── Services/
+│       │       │   ├── IOrderService.cs
+│       │       │   ├── OrderApiClient.cs          typed HttpClient
+│       │       │   └── OrderService.cs
+│       │       └── Wrong/                         ⚠️ examples only — not in DI
+│       │           └── WrongApproaches.cs
+│       │
+│       ├── appsettings.json
+│       └── Program.cs                             ← Single entry point, all DI
+│
+└── README.md
 ```
 
 ---
@@ -56,7 +95,7 @@ Each concept is implemented using:
 | --- | --------------------------------- | ---------- | ------------------------------------------- | ----------- |
 | 1 | [Using AddSingleton with DbContext](posts/post-1-di-dbcontext-lifetime/README.md) | Mistake    | `src/DotNetConceptLab/Posts/Post01_SingletonDbContext/Data/AppDbContext.cs` | [LinkedIn](https://www.linkedin.com/posts/akashshah12_dotnet-aspnetcore-dependencyinjection-activity-7445168434578870273-Ceu_?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAyuQhMBu9hN6cIx0wrI0m-m65rzhE-5JoU) |
 | 2 | [What async/await Really Does (Misunderstood)](posts/post-02-async-await/README.md) | Concept + Mistakes | `src/DotNetConceptLab/Posts/Post02_AsyncAwait/` | [LinkedIn](https://www.linkedin.com/posts/akashshah12_dotnet-csharp-asyncawait-activity-7450022630835015680-6UfL?utm_medium=ios_app&rcm=ACoAAAyuQhMBu9hN6cIx0wrI0m-m65rzhE-5JoU) |
-| 3 | [IHttpClientFactory — Why `new HttpClient()` is a production bug](posts/post-03-ihttpclientfactory/README.md) |  | Mistake | [LinkedIn](https://www.linkedin.com/in/akashshah12/) |
+| 3 | [IHttpClientFactory — Why `new HttpClient()` is a production bug](posts/post-03-ihttpclientfactory/README.md) | Mistake | `src/DotNetConceptLab/Posts/post-03-ihttpclientfactory/` | [LinkedIn](https://www.linkedin.com/in/akashshah12/) |
 
 > This table will be updated as new posts are added.
 
