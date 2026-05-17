@@ -1,0 +1,12 @@
+namespace DotNetConceptLab.Posts.Post02.Models;
+
+public record Order(int Id, string Product, int UserId, DateTime CreatedAt);
+public record CreateOrderRequest_Post02(string Product, int UserId);
+public record UserProfile(int Id, string Name, string Email);
+public record OrderSummary(int Id, string Product, DateTime CreatedAt);
+public record DashboardDto(
+    UserProfile Profile,
+    IEnumerable<OrderSummary> RecentOrders,
+    decimal WalletBalance,
+    int UnreadNotifications
+);
