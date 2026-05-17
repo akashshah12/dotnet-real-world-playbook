@@ -62,7 +62,7 @@ builder.Services.AddHttpClient<Post03Services.OrderApiClient>(client =>
         retryCount: 3,
         sleepDurationProvider: attempt => TimeSpan.FromSeconds(Math.Pow(2, attempt)),
         onRetry: (outcome, delay, attempt, _) =>
-            Console.WriteLine($"[Post25] Retry {attempt} after {delay.TotalSeconds:F0}s " +
+            Console.WriteLine($"[Post03] Retry {attempt} after {delay.TotalSeconds:F0}s " +
                               $"— {outcome.Exception?.Message ?? outcome.Result?.StatusCode.ToString()}")
     )
 )
@@ -71,9 +71,9 @@ builder.Services.AddHttpClient<Post03Services.OrderApiClient>(client =>
     policy.CircuitBreakerAsync(
         handledEventsAllowedBeforeBreaking: 5,
         durationOfBreak: TimeSpan.FromSeconds(30),
-        onBreak:    (_, duration) => Console.WriteLine($"[Post25] Circuit OPEN for {duration.TotalSeconds:F0}s"),
-        onReset:    ()            => Console.WriteLine("[Post25] Circuit CLOSED — upstream healthy"),
-        onHalfOpen: ()            => Console.WriteLine("[Post25] Circuit HALF-OPEN — testing upstream")
+        onBreak:    (_, duration) => Console.WriteLine($"[Post03] Circuit OPEN for {duration.TotalSeconds:F0}s"),
+        onReset:    ()            => Console.WriteLine("[Post03] Circuit CLOSED — upstream healthy"),
+        onHalfOpen: ()            => Console.WriteLine("[Post03] Circuit HALF-OPEN — testing upstream")
     )
 )
 // ✅ Recycle handlers every 5 minutes so DNS changes are picked up
